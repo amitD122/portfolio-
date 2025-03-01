@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amit Dhane - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="landing">
+      <h1>Hi, I'm <span class="highlight">Amit Dhane</span>,</h1>
+      <p>and I'm a SharePoint & .NET Developer.</p>
+      <button class="cta-button" onclick="scrollToContent()">
+        Work With Me →
+      </button>
+    </section>
+
+    <!-- <header>
+      <h1>Amit Dhane</h1>
+      <p>SharePoint Developer | .NET | AngularJS | C#</p>
+    </header> -->
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        With over 3 years of experience, I have managed and developed projects
+        related to SharePoint on-prem, .NET MVC, .NET Core, and AngularJS. I
+        have single-handedly maintained the MyTAJ Employee Portal for over a
+        year and developed the Lupin Awards website on SharePoint Online in just
+        3 months.
+      </p>
+    </section>
+
+    <section class="work">
+      <h2>My Best Work</h2>
+      <div class="projects">
+        <div class="project">
+          <img src="project1.jpg" alt="MyTAJ Employee Portal" />
+          <h3>MyTAJ Employee Portal</h3>
+          <p>
+            Managed and developed this internal employee platform for 1+ years.
+          </p>
+        </div>
+        <div class="project">
+          <img src="project2.jpg" alt="Lupin Awards Website" />
+          <h3>Lupin Awards Website</h3>
+          <p>
+            Built and deployed a SharePoint Online custom-developed awards
+            website in 3 months.
+          </p>
+        </div>
+        <div class="project">
+          <img src="project3.jpg" alt="SSO Implementation for Tata Edge" />
+          <h3>SSO for Tata Edge</h3>
+          <p>
+            Integrated Single Sign-On (SSO) with Tata Edge using custom
+            encryption APIs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>SharePoint On-Prem & Online</li>
+        <li>.NET MVC & Core</li>
+        <li>C# Development</li>
+        <li>AngularJS</li>
+        <li>SAML Authentication</li>
+        <li>SSO Implementation</li>
+        <li>SFTP File Processing</li>
+      </ul>
+    </section>
+
+    <section class="education">
+      <h2>Education</h2>
+      <p>
+        Bachelor of Computer Applications (BCA) - Savitribai Phule Pune
+        University
+      </p>
+    </section>
+
+    <footer>
+      <p>Contact: amit.dhane@example.com | GitHub: github.com/amitdhane</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    function revealOnScroll() {
+        let sections = document.querySelectorAll("section");
+        let skillItems = document.querySelectorAll(".skills li");
+        
+        sections.forEach(section => {
+            let sectionTop = section.getBoundingClientRect().top;
+            let triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                section.classList.add("visible");
+            }
+        });
+
+        skillItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add("visible");
+            }, index * 150);
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Run initially to check already visible elements
+});
+
+    </script>
+    <script>
+      function scrollToContent() {
+        window.scrollTo({
+          top: document.querySelector(".about").offsetTop,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
